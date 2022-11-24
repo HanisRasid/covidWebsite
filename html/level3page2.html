@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Coronavirus Overview</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="l3p2.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+    </head>
+    <body>
+        <header>
+            <!-- Navigation Bar (sits on top) -->
+            <nav>
+              <div class="w3-top">
+                <div class="w3-row w3-padding w3-black">
+                  <h1 style="text-align: center;">COVID-19 SIMILAR COUNTRIES AND STATES</h1>
+                  <div class="w3-col s3" style="font-size: 22px;">
+                    <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                      <a class="dropbtn w3-button w3-block w3-black" href ="index.html">HOME</a>
+                    </div>
+                  </div>
+                  <div class="w3-col s3" style="font-size: 22px;">
+                    <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                      <a class="dropbtn w3-button w3-block w3-black" href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/what-you-need-to-know-about-coronavirus-covid-19" target="_blank">WHAT IS COVID-19?</a>
+                    </div>
+                  </div>
+                  <div class="w3-col s3" style="font-size: 22px;">
+                    <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                      <a class="dropbtn w3-button w3-block w3-black">ABOUT</a>
+                    </div>
+                </div>
+                  <div class="w3-col s3" style="font-size: 22px;">
+                      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                        <a class="dropbtn w3-button w3-block w3-black">VIEW BY:</a>
+                          <div class="dropdown-content">
+                            <a href="#">LOCATION AND CLIMATE</a>
+                            <a href="#">SIMILAR COUNTRIES AND STATE</a>
+                            <a href="level2page2.html">DEATHS</a>
+                            <a href="level2page1.html">INFECTIONS</a>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+        </header>
+        <main>
+            <h1 class="heading">Similar Countries and States</h1>
+            <form>
+              <label>Country:</label>
+                <div>
+                <select class="country" id="country">
+                  <option value="none" selected hidden disabled>Select a Country...</option>
+                  <option value="Australia">Australia</option>
+                  <option value="england">England</option>
+                  <option value="Brazil">Brazil</option>
+                  <option value="United States">US</option>
+                </select>
+                </div>
+                <br>
+                <div class="state">
+                    <label for="state">State (For USA only):</label><br>
+                    <select class="state" id="state">
+                      <option value="none" selected hidden disabled>Select a State...</option>
+                      <option value="Australia">New York</option>
+                      <option value="england">Arkansas</option>
+                      <option value="Brazil">Illinois</option>
+                      <option value="United States">Texas</option>
+                    </select>
+                </div>
+                <br>
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </form>
+            <br><br>
+            <table style="width:80%">
+                <caption>Most similar countries/state data</caption>
+                <thead>
+                  <tr>
+                    <th colspan ="2">Most similar infections per million</th>
+                    <th colspan="2">Most similar Death/Cases %</th>
+                    <th colspan="2">Most similar peak daily infections <br>(Within a range of 5 days)</th>
+                    <th colspan ="2">Most similar peak daily deaths <br>(Within a range of 5 days)</th>
+                  </tr>
+                  <tr>
+                    <th>Country/State</th>
+                    <th>Infections per million</th>
+                    <th>Country/State</th>
+                    <th>Death/Cases %</th>
+                    <th>Country/State</th>
+                    <th>Peak daily infections</th>
+                    <th>Country/State</th>
+                    <th>Peak daily deaths</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <table style="width:75%">
+                <caption>Most similar Death/Cases percentage</caption>
+                <thead>
+                  <tr>
+                    <th colspan="2">Most similar Death/Cases %</th>
+                    <th colspan="2">Most similar peak daily infections (Within a range of 5 days)</th>
+                    <th colspan ="2"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <table style="width:75%">
+                <caption>Most similar peak daily infections (Within a range of 5 days)</caption>
+                <thead>
+                  <tr>
+                    <th>Country/State</th>
+                    <th>Peak daily infection date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <table style="width:75%">
+                <caption>Most similar peak daily deaths (Within a range of 5 days)</caption>
+                <thead>
+                  <tr>
+                    <th>Country/State</th>
+                    <th>Peak daily death date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+            </table>
+            <br><br>
+
+        </main>
+    </body>
+</html>

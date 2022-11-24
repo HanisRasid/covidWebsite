@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Coronavirus Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" href="csspage.css">
+    <link rel="stylesheet" href="charts.min.css">
+    <!-- Most affected countries graph-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart', 'bar']});
+      google.charts.setOnLoadCallback(drawTable1);
+      google.charts.setOnLoadCallback(drawTable2);
+      
+      function drawTable1() {
+
+        var button = document.getElementById('change-chart1');
+        var chartDiv = document.getElementById('chart1_div');
+
+        var data = google.visualization.arrayToDataTable([
+          ['Countries', 'Total Deaths', 'Death/Cases (%)   -'],
+          ['United States of America', 581166, 1.82],
+          ['Brazil', 383502, 2.71],
+          ['Mexico', 214079, 9.23],
+          ['India', 186920, 1.15],
+          ['Italy', 118357, 3.02]
+        ]);
+
+        var materialOptions = {
+          width: 900,
+          chart: {
+            title: 'Most affected countries',
+            subtitle: 'Total deaths on the left, Death/Cases on the right'
+          },
+          series: {
+            0: { axis: 'total deaths' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'deaths/cases' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            y: {
+              distance: {label: 'total deaths'}, // Left y-axis.
+              brightness: {side: 'right', label: 'deaths/cases'} // Right y-axis.
+            }
+          }
+        };
+
+        var classicOptions = {
+          width: 900,
+          series: {
+            0: {targetAxisIndex: 0},
+            1: {targetAxisIndex: 1}
+          },
+          title: 'Most affected countries - Total deaths on the left, Death/Cases on the right',
+          vAxes: {
+            // Adds titles to each axis.
+            0: {title: 'total deaths'},
+            1: {title: 'deaths/cases'}
+          }
+        };
+
+        function drawMaterialChart() {
+          var materialChart = new google.charts.Bar(chartDiv);
+          materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+          button.innerText = 'Change to Classic';
+          button.onclick = drawClassicChart;
+        }
+
+        function drawClassicChart() {
+          var classicChart = new google.visualization.ColumnChart(chartDiv);
+          classicChart.draw(data, classicOptions);
+          button.innerText = 'Change to Material';
+          button.onclick = drawMaterialChart;
+        }
+
+        drawMaterialChart();
+      };
+      
+      function drawTable2() {
+
+      var button2 = document.getElementById('change-chart2');
+      var chartDiv2 = document.getElementById('chart2_div');
+
+      var data2 = google.visualization.arrayToDataTable([
+        ['Countries', 'Number of cases'],
+        ['Micronesia', 1],
+        ['Samoa', 3],
+        ['Marshall Islands', 4],
+        ['Solomon Islands', 20],
+        ['Holy See', 27]
+      ]);
+
+      var materialOptions2 = {
+        width: 900,
+        chart: {
+          title: 'Least affected countries',
+          subtitle: 'All countries have had no deaths due to Covid-19, therefore number of cases is used as a measure instead'
+        },
+        series: {
+          0: { axis: 'Total deaths' }, // Bind series 0 to an axis named 'distance'.
+          1: { axis: 'Number of cases' } // Bind series 1 to an axis named 'brightness'.
+        },
+        axes: {
+          y: {
+            distance: {label: 'Total deaths'}, // Left y-axis.
+            brightness: {side: 'right', label: 'Number of cases'} // Right y-axis.
+          }
+        }
+      };
+
+      var classicOptions2 = {
+        width: 900,
+        series: {
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1}
+        },
+        title: 'Least affected countries - All have no death count. Number of cases is used in its place',
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Number of cases'},
+          1: {title: 'Number of cases'}
+        }
+      };
+
+      function drawMaterialChart2() {
+        var materialChart = new google.charts.Bar(chartDiv2);
+        materialChart.draw(data2, google.charts.Bar.convertOptions(materialOptions2));
+        button2.innerText = 'Change to Classic';
+        button2.onclick = drawClassicChart2;
+      }
+
+      function drawClassicChart2() {
+        var classicChart = new google.visualization.ColumnChart(chartDiv2);
+        classicChart.draw(data2, classicOptions2);
+        button2.innerText = 'Change to Material';
+        button2.onclick = drawMaterialChart2;
+      }
+
+      drawMaterialChart2();
+      };
+    </script>
+  </head>
+
+
+
+  <body>
+
+    <header>
+      <!-- Navigation Bar (sits on top) -->
+      <nav>
+        <div class="w3-top">
+          <div class="w3-row w3-padding w3-black">
+            <h1 style="text-align: center;">COVID-19 RELATED DEATHS BY COUNTRY</h1>
+            <div class="w3-col s3" style="font-size: 22px;">
+              <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                <a class="dropbtn w3-button w3-block w3-black" href ="index.html">HOME</a>
+              </div>
+            </div>
+            <div class="w3-col s3" style="font-size: 22px;">
+              <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                <a class="dropbtn w3-button w3-block w3-black" href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/what-you-need-to-know-about-coronavirus-covid-19" target="_blank">WHAT IS COVID-19?</a>
+              </div>
+            </div>
+            <div class="w3-col s3" style="font-size: 22px;">
+              <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                <a class="dropbtn w3-button w3-block w3-black">ABOUT</a>
+              </div>
+          </div>
+            <div class="w3-col s3" style="font-size: 22px;">
+                <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+                  <a class="dropbtn w3-button w3-block w3-black">VIEW BY:</a>
+                    <div class="dropdown-content">
+                      <a href="#">LOCATION AND CLIMATE</a>
+                      <a href="#">SIMILAR COUNTRIES AND STATE</a>
+                      <a href="level2page2.html">DEATHS</a>
+                      <a href="level2page1.html">INFECTIONS</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main style="transform: translateY(100px);">
+      <h5 class="w3-center w3-padding-64" style="font-size: 45px; ">COVID-19 Deaths</h5>
+          <table style="margin-left: auto; margin-right: auto; " class="fixed_header">
+            <thead>
+              <tr>
+                <td>Country</td>
+                <td>Total number of deaths</td>
+                <td>  <label for="deaths">Total number of deaths in:</label>
+                  <select name="deaths" id="deaths">
+                    <option value="Jan 20">Jan 20</option>
+                    <option value="Feb 20">Feb 20</option>
+                    <option value="March 20">Mar 20</option>
+                    <option value="audi">Apr 20</option>
+                    <option value="Jan 20">May 20</option>
+                    <option value="Feb 20">Jun 20</option>
+                    <option value="March 20">Jul 20</option>
+                    <option value="audi">Aug 20</option>
+                    <option value="Jan 20">Sep 20</option>
+                    <option value="Feb 20">Oct 20</option>
+                    <option value="March 20">Nov 20</option>
+                    <option value="audi">Dec 20</option>
+                    <option value="Jan 20">Jan 21</option>
+                    <option value="Feb 20">Feb 21</option>
+                    <option value="March 20">Mar 21</option>
+                    <option value="audi">Apr 21</option>
+                  </select></td>
+                <td>Day with most recorded deaths</td>
+                <td>Deaths/Cases %</td>
+              </tr>
+            </thead>
+            <tr>
+              <td>Australia</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>United States of America</td>
+              <td>948,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>04/11/2020</td>
+            </tr>
+            <tr>
+              <td>China</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Japan</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Germany</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Italy</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>New Zealand</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>France</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Greece</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Vietnam</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>South Korea</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>North Korea</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Cambodia</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Thailand</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Greenland</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Russia</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+            <tr>
+              <td>Iraq</td>
+              <td>29,906</td>
+              <td>30/11/2019</td>
+              <td>04/22/2021</td>
+              <td>3/07/2020</td>
+            </tr>
+          </table>
+          <!--Most affected countries table-->
+          <div class="tblbtn">
+            <button id="change-chart1">Change to Classic</button>
+            <br/><br/>
+            <div id="chart1_div" class ="chart" style="width: 800px; height: 500px;"></div>
+            <br/><br/>
+            <button id="change-chart2">Change to Classic</button>
+            <br><br>
+            <div id="chart2_div" class ="chart" style="width: 800px; height: 500px;"></div>
+            </div>
+          
+
+            <table class="charts-css bar show-heading" id="my-chart">
+
+              <caption> 2016 Summer Olympics Medal Table </caption>
+            
+              <thead>
+                <tr>
+                  <th scope="col"> Country </th>
+                  <th scope="col"> Gold </th>
+                  <th scope="col"> Silver </th>
+                  <th scope="col"> Bronze </th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                <tr>
+                  <th scope="row"> USA </th>
+                  <td> 46 </td>
+                  <td> 37 </td>
+                  <td> 38 </td>
+                </tr>
+                <tr>
+                  <th scope="row"> GBR </th>
+                  <td> 27 </td>
+                  <td> 23 </td>
+                  <td> 17 </td>
+                </tr>
+                <tr>
+                  <th scope="row"> CHN </th>
+                  <td> 26 </td>
+                  <td> 18 </td>
+                  <td> 26 </td>
+                </tr>
+              </tbody>
+            
+            </table>
+    </main>
+  </body>
+
+</html>

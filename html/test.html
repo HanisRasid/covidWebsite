@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<title>Coronavirus Overview</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='w3.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inconsolata'>
+<link rel='stylesheet' href='csspage.css'>
+<style>
+
+
+
+
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+  margin-bottom: 50px;
+}
+
+.container {
+  width: 390px;
+  height: 550px;
+  border: 2px solid rgb(44, 44, 44);
+  left: 240px;
+  padding-top: 15px;
+
+}
+
+.form {
+  border: 1px solid rgb(145, 145, 145);
+  padding: 100px;
+}
+
+.form__group {
+  margin-bottom: 20px;
+}
+
+.form__group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.dropdown {
+  position: relative;
+  left: 0px;
+  
+}
+
+.dropdown__selected {
+  display: flex;
+  align-items: center;
+  width: 275px;
+  height: 40px;
+  padding: 0 20px 0 10px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow .3s ease;
+}
+
+.dropdown__selected::after {
+  top: calc(50% - 2px);
+  right: 10px;
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top-color:#000;
+  border-width: 4px;
+  margin-left: -4px;
+}
+
+.dropdown__selected:hover {
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-top: 0;
+  background-color: #fff;
+  z-index: 5;
+  display: none;
+}
+
+.dropdown__menu_items {
+  max-height: 325px;
+  overflow-y: auto;
+}
+
+.dropdown__menu_search {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px;
+  outline: 0;
+  background-color: #f9f9f9;
+}
+
+.dropdown__menu_item {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown__menu_item:last-child {
+  border-bottom: 0;
+}
+
+.dropdown__menu_item:hover {
+  background-color: var(--border-color);
+}
+
+.dropdown__menu_item.selected,
+.dropdown__menu_item.selected:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(31, 31, 31);
+  color: rgb(255, 255, 255);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15px;
+  margin: auto;
+  width: 1600px;
+
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: #f1f1f100;
+  padding: 10px;
+  flex: 30%;
+}
+
+.flex-item-right {
+  background-color: rgba(30, 143, 255, 0);
+  padding: 10px;
+  flex: 70%;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+
+</style>
+<head>
+  <link rel="stylesheet" href="chosen.css">
+</head>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom dropdown with search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Custom dropdown with search</h1>
+  </header>
+
+
+
+<div class="flex-container">
+  <div class="flex-item-left">
+
+    <div class="container">
+      <h5 style="font-weight: bold;">Select A Country</h5>
+     <!--<form>--> <div class="filter">
+      <select multiple data-placeholder="Select..." style="width: 250px;" class="chosen-select"  id="countriesDropdown" oninput="filterTable()">
+
+        <option value="1">Australia</option>
+        <option value="2">China</option>
+        <option value="3">Java</option>
+        <option value="4">Javascript</option>
+        <option value="5">HTML</option>
+        <option value="6">MySql</option>
+        <option value="7">Sql Server</option>
+        <option value="8">C#</option>
+        <option value="9">C++</option>
+        <option value="10">Java</option>
+        <option value="11">Javascript</option>
+        <option value="12">HTML</option>
+        <option value="13">MySql</option>
+        <option value="14">Sql Server</option>
+    </select>
+  </div>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="chosen.jquery.js"></script>
+    <script type="text/javascript">
+        $(".chosen-select").chosen({
+        });
+    </script>
+
+       <!--<button type="submit" class="btn">Submit</button>
+      </form> --> 
+    </div>
+  </div>
+
+  <div class="flex-item-right">
+    <table  class="fixed_header" id="myTable2">
+      <thead>
+      <tr value="1">
+        <th>Country</th>
+        <th>Infections</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Day with the highest infection</th>
+        <th>Highest infection in a day</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>Australia</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>United States of America</td>
+        <td>948,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>04/11/2020</td>
+        <td>90,316</td>
+      </tr>
+      <tr>
+        <td>China</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Japan</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Germany</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Italy</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>New Zealand</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>France</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Greece</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Vietnam</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>South Korea</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>North Korea</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Cambodia</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Thailand</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Greenland</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Russia</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+      <tr>
+        <td>Iraq</td>
+        <td>29,906</td>
+        <td>30/11/2019</td>
+        <td>04/22/2021</td>
+        <td>3/07/2020</td>
+        <td>3,416</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<select id="countriesDropdown" oninput="filterTable()">
+  <option>All</option>
+  <option>Sweden</option>
+  <option>Germany</option>
+</select>
+
+<table id="myTable">
+  <tr><th>Name</th><th>Country</th></tr><!-- header row uses 'th' instead of 'td' -->
+  <tr><td>Inga</td><td>Sweden</td></tr>
+  <tr><td>Helena</td><td>Sweden</td></tr>
+  <tr><td>Hans</td><td>Germany</td></tr>
+  <tr><td>Anna</td><td>Germany</td></tr>
+</table>
+
+  <script>
+function filterTable() {
+  // Variables
+  let dropdown, table, rows, cells, country, filter;
+  dropdown = document.getElementById("countriesDropdown");
+  table = document.getElementById("myTable");
+  rows = table.getElementsByTagName("tr");
+  filter = dropdown.value;
+
+  // Loops through rows and hides those with countries that don't match the filter
+  for (let row of rows) { // `for...of` loops through the NodeList
+    cells = row.getElementsByTagName("td");
+    country = cells[1] || null; // gets the 2nd `td` or nothing
+    // if the filter is set to 'All', or this is the header row, or 2nd `td` text matches filter
+    if (filter === "All" || !country || (filter === country.textContent)) {
+      row.style.display = ""; // shows this row
+    }
+    else {
+      row.style.display = "none"; // hides this row
+    }
+  }
+}
+  </script>
+
+  <script>
+  // Get dropdowns and form
+const dropdowns = document.querySelectorAll('[data-dropdown]');
+const form = document.querySelector('form');
+
+// Check if dropdowns exist on page
+if(dropdowns.length > 0) {
+  // Loop through dropdowns and create custom dropdown for each select element
+  dropdowns.forEach(dropdown => {
+    createCustomDropdown(dropdown);
+  });
+}
+
+// Check if form element exist on page
+if(form !== null) {
+  // When form is submitted console log the value of the select field
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Selected country:', form.querySelector('[name="country"]').value);
+  });
+}
+
+// Create custom dropdown
+function createCustomDropdown(dropdown) {
+  // Get all options and convert them from nodelist to array
+  const options = dropdown.querySelectorAll('option');
+  const optionsArr = Array.prototype.slice.call(options);
+
+  // Create custom dropdown element and add class dropdown to it
+  // Insert it in the DOM after the select field
+  const customDropdown = document.createElement('div');
+  customDropdown.classList.add('dropdown');
+  dropdown.insertAdjacentElement('afterend', customDropdown);
+
+  // Create element for selected option
+  // Add class to this element, text from the first option in select field and append it to custom dropdown
+  const selected = document.createElement('div');
+  selected.classList.add('dropdown__selected');
+  selected.textContent = optionsArr[0].textContent;
+  customDropdown.appendChild(selected);
+
+  // Create element for dropdown menu, add class to it and append it to custom dropdown
+  // Add click event to selected element to toggle dropdown menu
+  const menu = document.createElement('div');
+  menu.classList.add('dropdown__menu');
+  customDropdown.appendChild(menu);
+  selected.addEventListener('click', toggleDropdown.bind(menu));
+
+  // Create serach input element
+  // Add class, type and placeholder to this element and append it to menu element
+  const search = document.createElement('input');
+  search.placeholder = 'Search...';
+  search.type = 'text';
+  search.classList.add('dropdown__menu_search');
+  menu.appendChild(search);
+
+  // Create wrapper element for menu items, add class to it and append to menu element
+  const menuItemsWrapper = document.createElement('div');
+  menuItemsWrapper.classList.add('dropdown__menu_items');
+  menu.appendChild(menuItemsWrapper);
+
+  // Loop through all options and create custom option for each option and append it to items wrapper element
+  // Add click event for each custom option to set clicked option as selected option
+  optionsArr.forEach(option => {
+    const item = document.createElement('div');
+    item.classList.add('dropdown__menu_item');
+    item.dataset.value = option.value;
+    item.textContent = option.textContent;
+    menuItemsWrapper.appendChild(item);
+
+    item.addEventListener('click', setSelected.bind(item, selected, dropdown, menu));
+  });
+
+  // Add selected class to first custom option
+  menuItemsWrapper.querySelector('div').classList.add('selected');
+
+  // Add input event to search input element to filter items
+  // Add click event to document element to close custom dropdown if clicked outside of it
+  // Hide original dropdown(select)
+  search.addEventListener('input', filterItems.bind(search, optionsArr, menu));
+  document.addEventListener('click', closeIfClickedOutside.bind(customDropdown, menu));
+  dropdown.style.display = 'none';
+}
+
+// Toggle dropdown
+function toggleDropdown() {
+  // Check if dropdown is opened and if it is close it, otherwise open it and focus search input
+  if(this.offsetParent !== null) {
+    this.style.display = 'none';
+  }else {
+    this.style.display = 'block';
+    this.querySelector('input').focus();
+  }
+}
+
+// Set selected option
+function setSelected(selected, dropdown, menu) {
+  // Get value and label from clicked custom option
+  const value = this.dataset.value;
+  const label = this.textContent;
+
+  // Change the text on selected element
+  // Change the value on select field
+  selected.textContent = label;
+  dropdown.value = value;
+
+  // Close the menu
+  // Reset search input value
+  // Remove selected class from previously selected option and show all divs if they were filtered
+  // Add selected class to clicked option
+  menu.style.display = 'none';
+  menu.querySelector('input').value = '';
+  menu.querySelectorAll('div').forEach(div => {
+    if(div.classList.contains('selected')) {
+      div.classList.remove('selected');
+    }
+    if(div.offsetParent === null) {
+      div.style.display = 'block';
+    }
+  });
+  this.classList.add('selected');
+}
+
+// Filter items
+function filterItems(itemsArr, menu) {
+  // Get all custom options
+  // Get the value of search input and convert it to all lowercase characters
+  // Get filtered items
+  // Get the indexes of filtered items
+  const customOptions = menu.querySelectorAll('.dropdown__menu_items div');
+  const value = this.value.toLowerCase();
+  const filteredItems = itemsArr.filter(item => item.value.toLowerCase().includes(value));
+  const indexesArr = filteredItems.map(item => itemsArr.indexOf(item));
+
+  // Check if option is not inside indexes array and hide it and if it is inside indexes array and it is hidden show it
+  itemsArr.forEach(option => {
+    if(!indexesArr.includes(itemsArr.indexOf(option))) {
+      customOptions[itemsArr.indexOf(option)].style.display = 'none';
+    }else {
+      if(customOptions[itemsArr.indexOf(option)].offsetParent === null) {
+        customOptions[itemsArr.indexOf(option)].style.display = 'block';
+      }
+    }
+  });
+}
+
+// Close dropdown if clicked outside dropdown element
+function closeIfClickedOutside(menu, e) {
+  if(e.target.closest('.dropdown') === null && e.target !== this && menu.offsetParent !== null) {
+    menu.style.display = 'none';
+  }
+} 
+  </script>
+</body>
+</html>
+
+</html>

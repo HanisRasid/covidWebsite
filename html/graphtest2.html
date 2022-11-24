@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.js"></script> 
+    
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script> -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
+    <title>My Chart.js example</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<style>
+.flex-chart {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-chart > div {
+  height: 500px;
+}
+</style>
+</head>
+<body>
+
+<div style = "transform: translateY(150px);">
+
+  <button onclick="updateLine(myChart)"> update </button>
+    <div class="w3-container" id="menu2">
+        <div class="w3-content" style="max-width:1500px;">
+            <div class="w3-row w3-center w3-card "  style="width: 250px; padding: 5px">
+                <a href="javascript:void(0)" onclick="openMenu2(event, 'Infections2');" id="myLink2">
+                  <div class="w3-col s6 tablink2">Infections</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu2(event, 'Deaths2');">
+                  <div class="w3-col s6 tablink2">Deaths</div>
+                </a>
+                
+              </div>
+                
+        <div id="Infections2" class="w3-container menu2" style="padding-top: 20px;">
+            <canvas id="myChart" style="width:1000px !important; height:350px !important;"></canvas>
+        </div>
+
+        <div id="Deaths2" class="w3-container menu2" style="padding-top: 20px;">
+            <canvas id="myChart2" style="width:1000px !important; height:350px !important;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <br><br><br><br><br><br><br>
+
+
+
+    <br><br><br><br><br><br><br>
+
+    <div class="w3-container" id="menu4">
+      <div class="w3-content" style="max-width:1500px;">
+          <div class="w3-row w3-center w3-card "  style="padding: 10px">
+              <a href="javascript:void(0)" onclick="openMenu4(event, 'Infections4');" id="myLink4">
+                <div class="w3-col s6 tablink4">Most Affected Countries</div>
+              </a>
+              <a href="javascript:void(0)" onclick="openMenu4(event, 'Deaths4');">
+                <div class="w3-col s6 tablink4">Least Affected Countries</div>
+              </a>
+            </div>
+              
+      <div id="Infections4" class="w3-container menu4" style="padding-top: 20px;">
+        <div class="flex-chart">
+          <table style="margin-right: 150px;">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+            </tr>
+          </table>
+          <button onclick="updateChart"> update </button>
+          <canvas id="myChart5" style="width:1000px !important; height:350px !important;"></canvas>
+      </div>    
+      </div>
+      <div id="Deaths4" class="w3-container menu4" style="padding-top: 20px;">
+          </div>
+      </div>
+  </div>
+
+
+
+ 
+   <!--
+    <script>
+        google.charts.load('current', {'packages':['corechart', 'bar']});
+   google.charts.setOnLoadCallback(drawTable1);
+ 
+   function drawTable1() {
+     var chartDiv = document.getElementById('chart1_div');
+
+     var data = google.visualization.arrayToDataTable([
+       ['Countries', 'Total Deaths', 'Death/Cases (%)   -'],
+       ['United States of America', 581166, 1.82],
+       ['Brazil', 383502, 2.71],
+       ['Mexico', 214079, 9.23],
+       ['India', 186920, 1.15],
+       ['Italy', 118357, 3.02]
+     ]);
+
+     var materialOptions = {
+       width: 800,
+       chart: {
+         title: 'Total deaths on the left, Death/Cases on the right',
+       },
+       series: {
+         0: { axis: 'total deaths' }, 
+         1: { axis: 'deaths/cases' } 
+       },
+       axes: {
+         y: {
+           distance: {label: 'total deaths'}, 
+           brightness: {side: 'right', label: 'deaths/cases'} 
+         }
+       }
+     };
+
+     function drawMaterialChart() {
+       var materialChart = new google.charts.Bar(chartDiv);
+       materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+     }
+
+     drawMaterialChart();
+   };
+    </script>
+
+    <script>
+                google.charts.load('current', {'packages':['corechart', 'bar']});
+   google.charts.setOnLoadCallback(drawTable1);
+   google.charts.setOnLoadCallback(drawTable2);
+   
+   function drawTable1() {
+
+     var button = document.getElementById('change-chart2');
+     var chartDiv = document.getElementById('chart2_div');
+
+     var data = google.visualization.arrayToDataTable([
+       ['Countries', 'Total Deaths', 'Death/Cases (%)   -'],
+       ['United States of America', 581166, 1.82],
+       ['Brazil', 383502, 2.71],
+       ['Mexico', 214079, 9.23],
+       ['India', 186920, 1.15],
+       ['Italy', 118357, 3.02]
+     ]);
+
+     var materialOptions = {
+       width: 800,
+       chart: {
+         title: 'Most affected countries',
+         subtitle: 'Total deaths on the left, Death/Cases on the right'
+       },
+       series: {
+         0: { axis: 'total deaths' }, // Bind series 0 to an axis named 'distance'.
+         1: { axis: 'deaths/cases' } // Bind series 1 to an axis named 'brightness'.
+       },
+       axes: {
+         y: {
+           distance: {label: 'total deaths'}, // Left y-axis.
+           brightness: {side: 'right', label: 'deaths/cases'} // Right y-axis.
+         }
+       }
+     };
+
+     var classicOptions = {
+       width: 900,
+       series: {
+         0: {targetAxisIndex: 0},
+         1: {targetAxisIndex: 1}
+       },
+       title: 'Most affected countries - Total deaths on the left, Death/Cases on the right',
+       vAxes: {
+         // Adds titles to each axis.
+         0: {title: 'total deaths'},
+         1: {title: 'deaths/cases'}
+       }
+     };
+
+     function drawMaterialChart() {
+       var materialChart = new google.charts.Bar(chartDiv);
+       materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+       button.innerText = 'Change to Classic';
+       button.onclick = drawClassicChart;
+     }
+
+     function drawClassicChart() {
+       var classicChart = new google.visualization.ColumnChart(chartDiv);
+       classicChart.draw(data, classicOptions);
+       button.innerText = 'Change to Material';
+       button.onclick = drawMaterialChart;
+     }
+
+     drawMaterialChart();
+   };
+    </script>-->
+
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        // Global Options   
+       
+        var myChart = new Chart(ctx, {
+            type:'line',
+            data:{
+                labels:["dd/mm/yyyy", "dd/mm/yyyy","dd/mm/yyyy","dd/mm/yyyy","dd/mm/yyyy","dd/mm/yyyy",],
+                datasets:[{
+                    label:'America',
+                    data:[4, 7, 9, 4, 7, 23,],
+                    backgroundColor:'green',
+                    borderWidth:3,
+                    borderColor: 'green',
+                    hoverBorderWidth:10,
+                    
+                    //hoverBorderColor: 'yellow'
+                }, {
+                    label:'Australia',
+                    data:[12, 9, 9, 10, 11, 26,],
+                    backgroundColor:'#82FFFF',
+                    borderWidth:3,
+                    borderColor: '#82FFFF',
+                    hoverBorderWidth:10,
+                    //hoverBorderColor: 'yellow'
+
+                }]
+            },
+            options:{
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                },
+                scales: {
+                    x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Date',
+                        font: {
+                            size: 25,
+                            fontColor: 'black'
+                        }
+                        }
+                    },
+                    y: {
+                    display: true,
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Cases',
+                        font: {
+                            size: 25,
+                            fontColor: 'black'
+                        }
+                        }
+                    }
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'index',
+                    intersect: false
+                }
+            }
+        });
+
+        function updateLine(myChart) {
+          myChart.data.datasets[0].data = [5, 12, 50, 45, 23, 90,];
+
+          myChart.update();
+    };
+    </script>
+
+    <script>
+        let myChart2 = document.getElementById('myChart2').getContext('2d');
+
+        // Global Options
+
+        let massPopChart2 = new Chart(myChart2, {
+            type:'line',
+            data:{
+                labels:['dd/mm/yyyy', 'dd/mm/yyyy', 'dd/mm/yyyy', 'dd/mm/yyyy', 'dd/mm/yyyy', 'dd/mm/yyyy'],
+                datasets:[{
+                    label:'America',
+                    data:[ 4, 7, 9, 5, 6, 6],
+                    backgroundColor:'red',
+                    borderWidth:3,
+                    borderColor: 'red',
+                    hoverBorderWidth:10,
+                    //hoverBorderColor: 'yellow'
+                    },
+                    {
+                    label:'China',
+                    data:[ 2, 3, 2, -5, 5, 9],
+                    backgroundColor:'blue',
+                    borderWidth:3,
+                    borderColor: 'blue',
+                    hoverBorderWidth:10,
+                    //hoverBorderColor: 'yellow'
+                    }]
+            },
+            options:{
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                },
+                scales: {
+                    x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Date',
+                        font: {
+                            size: 25,
+                            fontColor: 'black'
+                        }
+                        }
+                    },
+                    y: {
+                    display: true,
+                    beginAtZero: true,
+                    min: 0,
+                    title: {
+                        display: true,
+                        text: 'Deaths',
+                        font: {
+                            size: 25,
+                            fontColor: 'black'
+                        }
+                        }
+                    }
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'index',
+                    intersect: false
+                }
+            }
+        });
+    </script>
+
+<script>
+
+    let myChart5 = document.getElementById('myChart5').getContext('2d');
+
+    let massPopChart5 = new Chart(myChart5, {
+        type:'bar',
+        data:{
+            labels: ['06:00', '09:00', '12:00', '15:00', '18:00', '21:00'],
+  datasets: [{
+    label: 'Cases',
+    data: ['1', '8', '10', '10', '9', '7'],
+    backgroundColor: [
+    'rgba(0, 150, 255, 0.75)',
+      'rgba(0, 150, 255, 0.75)',
+      'rgba(0, 150, 255, 0.75)',
+      'rgba(0, 150, 255, 0.75)',
+      'rgba(0, 150, 255, 0.75)',
+      'rgba(0, 150, 255, 0.75)',
+      'rgba(0, 150, 255, 0.75)',
+    ],
+    borderColor: [
+      'rgba(0, 150, 200)',
+      'rgba(0, 150, 200)',
+      'rgba(0, 150, 200)',
+      'rgba(0, 150, 200)',
+      'rgba(0, 150, 200)',
+      'rgba(0, 150, 200)',
+      'rgba(0, 150, 200)',
+    ],
+    borderWidth: 1
+  },
+]
+        },
+        options:{}
+    });
+
+    function updateChart(myChart5) {
+      
+      myChart5.data.datasets[0].data = ['10', '20', '30', '40', '50', '60'];
+      
+
+      myChart5.update();
+    }
+</script>
+
+
+
+<!--
+<script>
+
+$("#0").click(function() {
+    var data = myChart5.data;
+    data.datasets.data = temp_dataset;
+    data.labels = chart_labels;
+    MyChart5.update();
+});
+$("#1").click(function() {
+    var chart_labels = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
+    var temp_dataset = ['5', '3', '4', '8', '10', '11', '10', '9'];
+    data.datasets.data = temp_dataset;
+
+    data.labels = chart_labels;
+    myChart5.update();
+}); 
+</script> -->
+
+<script>
+      // Tabbed Menu 2
+      function openMenu2(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu2");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink2");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+      }
+      document.getElementById("myLink2").click();
+  </script>
+
+<script>
+  function openMenu4(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu4");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink4");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+  }
+  document.getElementById("myLink4").click();
+</script>
+    
+</body>
+</html>

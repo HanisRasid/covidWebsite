@@ -1,0 +1,177 @@
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+  
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 93%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+  
+  /* Container holding the image and the text */
+  .container {
+    position: absolute;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute; 
+    left: 0; top: 0; bottom: 0; right: 0; 
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.6);
+    color: white;
+    width: 65%; height: 50%;
+  }
+
+/* table */
+
+  #data {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+  }
+  
+  #data td, #data th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #data tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #data tr:hover {background-color: #ddd;}
+  
+  #data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2e2e2e;
+    color: white;
+  }
+  
+  .fixed_header tbody{
+    font-family: Arial;
+    display:block;
+    overflow:auto;
+    height:200px;
+    width:100%;
+  } 
+
+  .fixed_header thead tr{
+    font-family: Arial;
+    display:block;
+  }
+
+  .fixed_header{
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 500px;
+}
+
+.fixed_header thead tr {
+   display: block;
+}
+
+.fixed_header thead {
+  background: black;
+  color:#fff;
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 200px;
+}
+
+.fixed_header tr:nth-child(even){background-color: #e4e4e4;}
+
+.fixed_header tbody tr:hover {background-color: rgb(187, 187, 187);}
+
+#deaths {
+  background-color: black;
+  color: white;
+  border-style: none;
+}
+
+.chart {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#change-chart1 {
+  margin-left: 550px;
+  margin-top: 50px;
+}
+#change-chart2 {
+  margin-left: 550px;
+  margin-top: 50px;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#my-chart.bar {
+  height: 200px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+.roundedCorners {
+  border: #777 1px solid;
+  padding: 0 10px;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+}
+

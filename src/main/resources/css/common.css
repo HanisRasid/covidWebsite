@@ -1,0 +1,332 @@
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 93%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: absolute;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute; 
+  left: 0; top: 0; bottom: 0; right: 0; 
+  margin: auto;
+  background-color: rgb(0, 0, 0, 0.6);
+  color: white;
+  width: 65%; height: 50%;
+}
+
+/* table */
+
+#data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 75%;
+}
+
+#data td, #data th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#data tr:nth-child(even){background-color: #f2f2f2;}
+
+#data tr:hover {background-color: #ddd;}
+
+#data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2e2e2e;
+  color: white;
+}
+
+.fixed_header tbody{
+  font-family: Arial;
+  display:block;
+  overflow:auto;
+  height:200px;
+  width:100%;
+} 
+
+.fixed_header thead tr{
+  font-family: Arial;
+  display:block;
+}
+
+.fixed_header{
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+.fixed_header tbody{
+display:block;
+width: 100%;
+overflow: auto;
+height: 500px;
+}
+
+.fixed_header thead tr {
+ display: block;
+}
+
+.fixed_header thead {
+background: black;
+color:#fff;
+}
+
+.fixed_header th, .fixed_header td {
+padding: 5px;
+
+text-align: center;
+width: 200px;
+}
+
+.fixed_header tr:nth-child(even){background-color: #e4e4e4;}
+
+.fixed_header tbody tr:hover {background-color: rgb(187, 187, 187);}
+
+/* states table */
+.fixed_header2 tbody{
+  font-family: Arial;
+  display:block;
+  overflow:auto;
+  height:200px;
+  width:100%;
+} 
+
+.fixed_header2 thead tr{
+  font-family: Arial;
+  display:block;
+}
+
+.fixed_header2{
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+.fixed_header2 tbody{
+display:block;
+width: 100%;
+overflow: auto;
+height: 400px;
+}
+
+.fixed_header2 thead tr {
+ display: block;
+}
+
+.fixed_header2 thead {
+background: black;
+color:#fff;
+}
+
+.fixed_header2 th, .fixed_header2 td {
+padding: 5px;
+
+text-align: center;
+width: 115px;
+}
+
+.fixed_header2 tr:nth-child(even){background-color: #e4e4e4;}
+
+.fixed_header2 tbody tr:hover {background-color: rgb(187, 187, 187);}
+
+/* most affected header */
+.fixed_header3 tbody{
+  font-family: Arial;
+  display:block;
+  overflow:auto;
+  height:200px;
+  width:100%;
+} 
+
+.fixed_header3 thead tr{
+  font-family: Arial;
+  display:block;
+}
+
+.fixed_header3{
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+.fixed_header3 tbody{
+display:block;
+width: 100%;
+overflow: auto;
+height: 400px;
+}
+
+.fixed_header3 thead tr {
+ display: block;
+}
+
+.fixed_header3 thead {
+background: black;
+color:#fff;
+}
+
+.fixed_header3 th, .fixed_header3 td {
+padding: 5px;
+
+text-align: center;
+width: 200px;
+}
+
+.fixed_header3 tr:nth-child(even){background-color: #e4e4e4;}
+
+.fixed_header3 tbody tr:hover {background-color: rgb(187, 187, 187);}
+
+#deaths {
+background-color: black;
+color: white;
+border-style: none;
+}
+
+.chart {
+margin-left: auto;
+margin-right: auto;
+}
+
+#change-chart1 {
+margin-left: 550px;
+margin-top: 50px;
+}
+#change-chart2 {
+margin-left: 550px;
+margin-top: 50px;
+}
+
+#myInput {
+background-image: url('/css/searchicon.png');
+background-position: 10px 10px;
+background-repeat: no-repeat;
+width: 100%;
+font-size: 16px;
+padding: 12px 20px 12px 40px;
+border: 1px solid #ddd;
+margin-bottom: 12px;
+}
+
+/* new drop down box */
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: rgb(0, 0, 0);
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: rgb(53, 53, 53);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.flex-chart {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-chart > div {
+  height: 500px;
+  
+}
+
+/* drop down search and flex */
+
+

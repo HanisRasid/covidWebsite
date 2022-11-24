@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>Coronavirus Overview</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="csspage.css">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <h1 style="text-align: center;">COVID-19 CORONAVIRUS PANDEMIC OVERVIEW</h1>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black" href ="index.html" style="text-decoration:none;">HOME</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black">WHAT IS COVID-19?</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black">ABOUT</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+        <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+          <a class="dropbtn w3-button w3-block w3-black">VIEW BY:</a>
+          <div class="dropdown-content">
+          <a href="#">LOCATION AND CLIMATE</a>
+          <a href="#">SIMILAR COUNTRIES AND STATE</a>
+          <a href="level2page2.html">DEATHS</a>
+          <a href="level2page1.html">INFECTIONS</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+    <canvas id="MyChart"></canvas>
+</div>
+
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    let massPopChart = new Chart(myChart, {
+        type:'bar', // bar, horizontalbar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:['A', 'B', 'C', 'D'],
+            datasets:[{
+                label:'Population',
+                data:[
+                    52,
+                    14,
+                    9,
+                    25
+                ]
+            }]
+        },
+        options:{}
+    });
+</script>
+
+</body>
+</html>
+
+

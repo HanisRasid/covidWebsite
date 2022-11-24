@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<title>Coronavirus Overview</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="csspage.css">
+
+
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <h1 style="text-align: center;">COVID-19 CORONAVIRUS PANDEMIC OVERVIEW</h1>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black" href ="index.html" style="text-decoration:none;">HOME</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black">WHAT IS COVID-19?</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black">ABOUT</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+        <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+          <a class="dropbtn w3-button w3-block w3-black">VIEW BY:</a>
+          <div class="dropdown-content">
+          <a href="#">LOCATION AND CLIMATE</a>
+          <a href="#">SIMILAR COUNTRIES AND STATE</a>
+          <a href="level2page2.html">DEATHS</a>
+          <a href="level2page1.html">INFECTIONS</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-sand w3-grayscale w3-large" style = "transform: translateY(150px);">
+
+      <h5 class="w3-center " style="font-size: 45px; padding-bottom: 25px; padding-top: 25px;">COVID-19 Infections</h5>
+
+      <div style = "text-align:center; ">
+        <form action="level2page1.html">
+          <label for="birthday">Date From:</label>
+          <input type="date" id="datefrom" name="datefrom">
+          <label for="birthday">Date To:</label>
+          <input type="date" id="dateto" name="dateto">
+          <input type="submit">
+        </form>
+    </div>
+
+    <p></p>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for country.." title="Type in a name" style="width: 1000px; text-align:center; margin: auto;
+    display: block;">
+    <p></p>
+
+
+      <div class="w3-container" id="menu">
+        <div class="w3-content" style="max-width:1250px">
+        
+          <div class="w3-row w3-center w3-card w3-padding">
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Infections');" id="myLink">
+              <div class="w3-col s6 tablink">Infections</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Deaths');">
+              <div class="w3-col s6 tablink">Deaths</div>
+            </a>
+          </div>
+            
+                <div id="Infections" class="w3-container menu w3-padding-48 ">
+                  <table style="margin-left: auto; margin-right: auto; margin-top: -25px;" class="fixed_header" id="myTable">
+        <thead>
+        <tr>
+          <th>Country</th>
+          <th>Infections</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Day with the highest infection</th>
+          <th>Highest infection in a day</th>
+        </tr>
+        </thead>
+        <tr>
+          <td>Australia</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>1312321</td>
+        </tr>
+        <tr>
+          <td>United States of America</td>
+          <td>948,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>04/11/2020</td>
+          <td>9120,316</td>
+        </tr>
+        <tr>
+          <td>China</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>36</td>
+        </tr>
+        <tr>
+          <td>Germany</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>33</td>
+        </tr>
+        <tr>
+          <td>Italy</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>New Zealand</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>France</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Greece</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Vietnam</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>South Korea</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>North Korea</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Cambodia</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Thailand</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Greenland</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Russia</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Iraq</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+      </table>
+                </div>
+            
+                <div id="Deaths" class="w3-container menu w3-padding-48 ">
+                  <table style="margin-left: auto; margin-right: auto;  margin-top: -25px;" class="fixed_header" id="myTable">
+        <thead>
+        <tr>
+          <th>Country</th>
+          <th>Deaths</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Day with the highest infection</th>
+          <th>Highest infection in a day</th>
+        </tr>
+        </thead>
+        <tr>
+          <td>Australia</td>
+          <td>22,421</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>5,213</td>
+        </tr>
+        <tr>
+          <td>United States of America</td>
+          <td>681,311</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>04/11/2020</td>
+          <td>10,006</td>
+        </tr>
+        <tr>
+          <td>China</td>
+          <td>1,602</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>2,001</td>
+        </tr>
+        <tr>
+          <td>Japan</td>
+          <td>19,555</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>585</td>
+        </tr>
+        <tr>
+          <td>Germany</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Italy</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>New Zealand</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>France</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Greece</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Vietnam</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>South Korea</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>North Korea</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Cambodia</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Thailand</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Greenland</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Russia</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+        <tr>
+          <td>Iraq</td>
+          <td>29,906</td>
+          <td>30/11/2019</td>
+          <td>04/22/2021</td>
+          <td>3/07/2020</td>
+          <td>3,416</td>
+        </tr>
+      </table>
+                </div>  
+                <img style="width:100%;max-width:1000px;margin-top:32px;">
+              </div>
+            </div>
+
+
+       
+              
+
+
+</body>
+
+            
+            <script>
+            // Tabbed Menu
+            function openMenu(evt, menuName) {
+              var i, x, tablinks;
+              x = document.getElementsByClassName("menu");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablink");
+              for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+              }
+              document.getElementById(menuName).style.display = "block";
+              evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+            }
+            document.getElementById("myLink").click();
+            </script>
+
+      <script>
+        function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        </script>
+
+<script>
+function sortTable(table, col, reverse) {
+    var tb = table.tBodies[0], // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
+        tr = Array.prototype.slice.call(tb.rows, 0), // put rows into array
+        i;
+    reverse = -((+reverse) || -1);
+    
+    tr = tr.sort(function (a, b) { // sort rows
+        
+        
+        if(!isNaN(a.cells[col].textContent) && !isNaN(b.cells[col].textContent))
+        return reverse * ((+a.cells[col].textContent) - (+b.cells[col].textContent))
+       return reverse // `-1 *` if want opposite order
+            * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
+                .localeCompare(b.cells[col].textContent.trim())
+               );
+    });
+    for(i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
+}
+
+function makeSortable(table) {
+    var th = table.tHead, i;
+    th && (th = th.rows[0]) && (th = th.cells);
+    if (th) i = th.length;
+    else return; // if no `<thead>` then do nothing
+    while (--i >= 0) (function (i) {
+        var dir = 1;
+        th[i].addEventListener('click', function () {sortTable(table, i, (dir = 1 - dir))});
+    }(i));
+}
+
+function makeAllSortable(parent) {
+    parent = parent || document.body;
+    var t = parent.getElementsByTagName('table'), i = t.length;
+    while (--i >= 0) makeSortable(t[i]);
+}
+
+window.onload = function () {makeAllSortable();};
+  </script>
+
+
+</body>
+</html>
+
+

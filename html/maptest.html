@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<title>Coronavirus Overview</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="csspage.css">
+
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <h1 style="text-align: center;">COVID-19 CORONAVIRUS PANDEMIC OVERVIEW</h1>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black" href ="index.html" style="text-decoration:none;">HOME</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black">WHAT IS COVID-19?</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+      <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+        <a class="dropbtn w3-button w3-block w3-black">ABOUT</a>
+
+      </div>
+  </div>
+    <div class="w3-col s3" style="font-size: 22px;">
+        <div class="dropdown w3-block w3-black" style="border:none;display:inline-block;padding:8px 16px;vertical-align:middle;text-align:center;">
+          <a class="dropbtn w3-button w3-block w3-black">VIEW BY:</a>
+          <div class="dropdown-content">
+          <a href="#">LOCATION AND CLIMATE</a>
+          <a href="#">SIMILAR COUNTRIES AND STATE</a>
+          <a href="level2page2.html">DEATHS</a>
+          <a href="level2page1.html">INFECTIONS</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="w3-sand w3-grayscale w3-large" style = "transform: translateY(150px);">
+  <html >
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity', 'Cases'],
+          ['Germany', 200, 122],
+          ['United States', 300, 122],
+          ['Brazil', 400, 144],
+          ['Canada', 500, 156],
+          ['France', 600, 152],
+          ['RU', 700, 12],
+          ['Australia', 300, 165]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 1920px; height: 850px; margin: auto;"></div>
+  </body>
+</html>
+    
+    <!-- End page content -->
+    </div>
+    
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+</body>
+</html>
